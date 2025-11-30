@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Reposition Leaflet Draw toolbar to bottom center horizontally */
+.leaflet-draw {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: auto !important;
+  z-index: 1000 !important;
+}
+
+/* Make the toolbar horizontal - single row */
+.leaflet-draw-toolbar {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 4px !important;
+  background: white !important;
+  padding: 8px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.leaflet-draw-toolbar a {
+  margin: 0 !important;
+  float: none !important;
+  display: inline-block !important;
+}
+
+/* Ensure both draw and edit toolbars are in the same row */
+.leaflet-draw-section {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+/* Force all toolbar items to stay in one line */
+.leaflet-draw-toolbar>* {
+  display: inline-flex !important;
+  flex-shrink: 0 !important;
+}
+
+/* Hide the edit toolbar positioning */
+.leaflet-draw-actions {
+  display: none !important;
+}
